@@ -41,7 +41,7 @@ The server requirements are mainly Python, Pip, Virtualenv, MySQL, Git, Nginx, S
 sudo apt-get install python-pip python-dev mysql-server git nginx supervisor libmysqlclient-dev
 ```
 
-Once these packages are completely installed, install virtualenv and virtualenvwrapper:
+Once these packages are completely installed, install virtualenv:
 
 ```bash
 sudo pip install virtualenv
