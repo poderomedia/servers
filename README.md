@@ -11,10 +11,10 @@ Remember: **Never make a private key or a AMI key public.**
 
 ##About Servers
 
-Our server are running mainly Debian GNU/Linux. It is desirably to run our applications on Debian (or Debian based distros).
+Our servers are running mainly Debian GNU/Linux. It is desirably to run our applications on Debian (or Debian based distros).
 
 ### Debian Amazon Images
-The default user created in EC2 Debian images is `admin`. You've can use sudo, or become `root` with `sudo -i`
+The default user created in EC2 Debian images is `admin`. You can use sudo, or become `root` with `sudo -i`
 
 #### SSH config
 
