@@ -13,6 +13,23 @@ Remember: **Never make a private key or a AMI key public.**
 
 Our server are running mainly Debian GNU/Linux. It is desirably to run our applications on Debian (or Debian based distros).
 
+### Debian Amazon Images
+The default user created in EC2 Debian images is `admin`. You've can use sudo, or become `root` with `sudo -i`
+
+#### SSH config
+
+Add the following to your `~/.ssh/config` file
+
+```
+Host machine-name-whatever-you-want
+     HostName <replace this with machine ip>
+     User admin
+     IdentityFile /route/to/key/file.pem
+
+```
+
+Now you can access your machine using `ssh machine-name-whatever-you-want` instead of `ssh -i /the/key/file.pem admin@machine.ip`
+
 
 ##Requirements
 
