@@ -103,3 +103,18 @@ Other tools that are nice to have are:
 	* `sudo service apache2 restart`
 	* `sudo service nginx start`
 	* Access phpMyAdmin in http://yourmachine.com:8080/phpmyadmin
+
+If you plan to use PostgreSQL install:
+
+```
+sudo apt-get install postgresql postgresql-contrib libpq-dev
+```
+
+And then install the library in your virtualenv (make sure your
+virtualenv is active). Maybe this is not needed because this will be
+triggered by running `pip install -r requirements.txt` in the project folder.
+
+```
+source /path/to/virtualenv/bin/activate # if virtualenv is not active
+pip install psycopg2
+```
