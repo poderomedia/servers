@@ -27,8 +27,49 @@ Host machine-name-whatever-you-want
      IdentityFile /route/to/key/file.pem
 
 ```
+Now you can access your machine using `ssh
+machine-name-whatever-you-want` instead of `ssh -i /the/key/file.pem
+admin@machine.ip`
 
-Now you can access your machine using `ssh machine-name-whatever-you-want` instead of `ssh -i /the/key/file.pem admin@machine.ip`
+#### Security Group
+
+Do not forget to set security group rules.
+
+These ports need to be set (notice these are **inbound rules**):
+
+* 22: Enabled by default. This port is used to connect to the server
+via SSH.
+  * Type: SSH
+  * Protocol: TCP
+  * Port range: 22
+  * Source: Anywhere
+* 80: Port used by HTTP Protocol. Needed to see webpages, APIs, and
+  every URL starting with 'http://'
+  * Type: HTTP
+  * Protocol: TCP
+  * Port range: 80
+  * Source: Anywhere
+
+Optional ports:
+
+* 443: Port needed to establish secure HTTP connections. Every URL
+starting with 'https://' uses this port.
+  * Type: HTTPS
+  * Protocol: TCP
+  * Port range: 443
+  * Source: Anywhere
+* 8080: Alternative port for HTTP connections. Needed if you plan to
+  use Apache **and** Nginx webservers, and want to use phpMyAdmin over
+  Apache, i.e. 'http://myserver:8080/phpmyadmin'. It can be any other
+  number between 0 and 65535, but any number over 3000 not already
+  used will be fine.
+  * Type: Custom TCP Rule
+  * Protocol: TCP
+  * Port range: 8080 (or the one you chose)
+  * Source: Anywhere
+
+
+
 
 
 ##Requirements
